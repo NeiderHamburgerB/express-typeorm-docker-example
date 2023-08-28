@@ -4,13 +4,15 @@ import { ProductService } from "../product/product.service";
 import { UserService } from "../user/user.service";
 import { CustomError } from "../../common/error";
 import { AppDataSource } from "../../app";
+import { DataSource } from "typeorm";
+import { Product } from "../../models/product/product.entity";
 
 export class ProductPurchaseService {
 
     public productPurchaseRepository: any;
     public productService: ProductService;
     public userService: UserService;
-
+    private dataSource: DataSource;
     constructor() {
         this.productPurchaseRepository = AppDataSource.getRepository(ProductPurchase);
         this.productService = new ProductService();
@@ -43,6 +45,11 @@ export class ProductPurchaseService {
                 }
 
                 products.push(product);
+
+                product.quantity -= item.quantities;
+                
+                await this.productService.update(product.id,{quantity:product.quantity}); 
+
                 total += product.price * item.quantities;
             }
 
