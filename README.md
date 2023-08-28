@@ -1,6 +1,10 @@
 # Nodejs Expres typeorm
 backend
 
+## Documentacióm con postman
+
+https://documenter.getpostman.com/view/26511391/2s9Y5ZuMEK
+
 ## Descripción
 
 Este proyecto es un backend desarrollado en Node.js y Express con el uso de TypeORM para la interacción con la base de datos. Proporciona una funcionalidad de autenticación de usuarios con dos roles diferentes: administrador y usuarios normales. El sistema de autenticación se valida mediante un middleware personalizado. Además, se ha configurado la imagen de PostgreSQL en el archivo de Docker Compose para la base de datos.
