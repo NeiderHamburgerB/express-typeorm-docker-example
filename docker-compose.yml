@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgresDb:
+    image: postgres:13
+    container_name: 'postgresDB-SMARTSOFT'
+    environment:
+      POSTGRES_USER: 'root'
+      POSTGRES_PASSWORD: 'root'
+      POSTGRES_DB: 'smartSoftDev'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5435:5432
