@@ -34,7 +34,7 @@ Se ha implementado un middleware de autenticación para verificar los roles y pe
 ## Installation
 
 ```bash
-$ docker compose up
+$ docker-compose up
   Situese en el proyecto y ejecute docker compose up para iniciar la imagen de la base de datos
 ```
 
